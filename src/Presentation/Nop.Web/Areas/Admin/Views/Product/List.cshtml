@@ -109,6 +109,14 @@
                                                 <nop-editor asp-for="SearchProductName" />
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <nop-label asp-for="SearchProductAuthor" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <nop-editor asp-for="SearchProductAuthor" />
+                                            </div>
+                                        </div>
                                         <div class="form-group row" @(Model.AvailableCategories.SelectionIsNotPossible() ? Html.Raw("style=\"display:none\"") : null)>
                                             <div class="col-md-4">
                                                 <nop-label asp-for="SearchCategoryId" />
@@ -218,6 +226,7 @@
                              Filters = new List<FilterParameter>
                                   {
                                       new FilterParameter(nameof(Model.SearchProductName)),
+                                      new FilterParameter(nameof(Model.SearchProductAuthor)),
                                       new FilterParameter(nameof(Model.SearchCategoryId)),
                                       new FilterParameter(nameof(Model.SearchIncludeSubCategories), typeof(bool)),
                                       new FilterParameter(nameof(Model.SearchManufacturerId)),
@@ -245,6 +254,10 @@
                                       new ColumnProperty(nameof(ProductModel.Name))
                                       {
                                           Title = T("Admin.Catalog.Products.Fields.Name").Text
+                                      },
+                                      new ColumnProperty(nameof(ProductModel.Author))
+                                      {
+                                          Title = T("Admin.Catalog.Products.Fields.Author").Text
                                       },
                                       new ColumnProperty(nameof(ProductModel.Sku))
                                       {

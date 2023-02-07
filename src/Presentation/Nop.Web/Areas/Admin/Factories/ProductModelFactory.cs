@@ -789,7 +789,8 @@ namespace Nop.Web.Areas.Admin.Factories
                 productType: searchModel.SearchProductTypeId > 0 ? (ProductType?)searchModel.SearchProductTypeId : null,
                 keywords: searchModel.SearchProductName,
                 pageIndex: searchModel.Page - 1, pageSize: searchModel.PageSize,
-                overridePublished: overridePublished);
+                overridePublished: overridePublished,
+                author: searchModel.SearchProductAuthor);
 
             //prepare list model
             var model = await new ProductListModel().PrepareToGridAsync(searchModel, products, () =>

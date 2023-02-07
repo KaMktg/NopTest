@@ -26,6 +26,8 @@ namespace Nop.Web.Areas.Admin.Validators.Catalog
                 .When(x => x.IsRental);
 
             SetDatabaseValidationRules<Product>(mappingEntityAccessor);
+
+            RuleFor(m => m.Author).Length(0, 1000);
         }
     }
 }

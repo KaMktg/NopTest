@@ -32,6 +32,9 @@ namespace Nop.Web.Areas.Admin.Models.Catalog
         [NopResourceDisplayName("Admin.Catalog.Products.List.SearchProductName")]
         public string SearchProductName { get; set; }
 
+        [NopResourceDisplayName("Admin.Catalog.Products.List.SearchProductAuthor")]
+        public string SearchProductAuthor { get; set; }
+
         [NopResourceDisplayName("Admin.Catalog.Products.List.SearchCategory")]
         public int SearchCategoryId { get; set; }
 

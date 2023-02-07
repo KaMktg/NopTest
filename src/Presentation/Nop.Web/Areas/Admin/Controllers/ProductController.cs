@@ -197,6 +197,10 @@ namespace Nop.Web.Areas.Admin.Controllers
                     x => x.MetaTitle,
                     localized.MetaTitle,
                     localized.LanguageId);
+                await _localizedEntityService.SaveLocalizedValueAsync(product,
+                    x => x.Author,
+                    localized.Author,
+                    localized.LanguageId);
 
                 //search engine name
                 var seName = await _urlRecordService.ValidateSeNameAsync(product, localized.SeName, localized.Name, false);
