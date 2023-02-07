@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Book Discount",
+  "SystemName": "Widgets.BookDiscount",
+  "Version": "1.0",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "Team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.BookDiscount.dll",
+  "Description": "This Book Discount plugin"
+}

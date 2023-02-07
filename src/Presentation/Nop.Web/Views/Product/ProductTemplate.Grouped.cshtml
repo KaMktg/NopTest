@@ -171,6 +171,7 @@
                                         var dataDictPrice = new ViewDataDictionary(ViewData);
                                         dataDictPrice.TemplateInfo.HtmlFieldPrefix = $"price_{variant.Id}";
                                         @await Html.PartialAsync("_ProductPrice", variant.ProductPrice, dataDictPrice)
+                                        @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = "BookDiscount" })
                                     }
                                     <!--price breaks-->
                                     @await Html.PartialAsync("_ProductTierPrices", variant.TierPrices)

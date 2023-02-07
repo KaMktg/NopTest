@@ -1,0 +1,36 @@
+﻿@model Nop.Plugin.Widgets.BookDiscount.Models.ConfigurationModel
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+@await Component.InvokeAsync(typeof(StoreScopeConfigurationViewComponent))
+<form asp-controller="BookDiscount" asp-action="Configure" method="post">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="cards-group">
+                <div class="card card-default">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <nop-label asp-for="Messages"/>
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="Messages"/>
+                                <span asp-validation-for="Messages"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <div class="col-md-9 offset-md-3">
+                                    <button type="submit" name="save" class="btn btn-primary">@T("Admin.Common.Save")</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

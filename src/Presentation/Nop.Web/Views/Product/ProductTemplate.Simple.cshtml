@@ -128,6 +128,7 @@
                             @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.ProductPriceTop, additionalData = Model })
                             @await Html.PartialAsync("_ProductPrice", Model.ProductPrice, dataDictPrice)
                             @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.ProductPriceBottom, additionalData = Model })
+                            @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = "BookDiscount" })
 
                             @await Html.PartialAsync("_ProductTierPrices", Model.TierPrices)
 
