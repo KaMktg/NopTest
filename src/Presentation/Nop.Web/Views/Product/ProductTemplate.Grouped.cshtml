@@ -136,6 +136,10 @@
                                             @Html.Raw(variant.ShortDescription)
                                         </div>
                                     }
+
+                                    <!--author-->
+                                    @await Html.PartialAsync("_ProductAuthorBlock", variant)
+
                                     <!--availability-->
                                     @await Html.PartialAsync("_Availability", variant)
                                     <!--SKU, MAN, GTIN, vendor-->

@@ -87,6 +87,14 @@
             @Html.Raw(Model.ShortDescription)
         </div>
         <div class="add-info">
+            @if (!string.IsNullOrEmpty(Model.Author))
+            {
+                <div class="book-author" style="margin-bottom: 20px">
+                    <span>@T("Products.Author"):</span>
+                    <strong>@Model.Author</strong>
+                </div>
+            }
+
             @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.ProductBoxAddinfoBefore, additionalData = Model })
             <div class="prices">
                 @if (!string.IsNullOrEmpty(Model.ProductPrice.OldPrice))

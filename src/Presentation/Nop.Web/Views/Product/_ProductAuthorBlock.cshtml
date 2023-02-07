@@ -1,0 +1,9 @@
+﻿@model ProductDetailsModel
+
+@if (!string.IsNullOrWhiteSpace(Model.Author))
+{
+    <div class="variant-author" style="margin-bottom: 10px">
+        <span class="label">@T("Products.Author"):</span>
+        <strong> @Model.Author</strong>
+    </div>
+}

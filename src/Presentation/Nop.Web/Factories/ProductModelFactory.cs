@@ -1371,6 +1371,7 @@ namespace Nop.Web.Factories
                 {
                     Id = product.Id,
                     Name = await _localizationService.GetLocalizedAsync(product, x => x.Name),
+                    Author = await _localizationService.GetLocalizedAsync(product, x => x.Author),
                     ShortDescription = await _localizationService.GetLocalizedAsync(product, x => x.ShortDescription),
                     FullDescription = await _localizationService.GetLocalizedAsync(product, x => x.FullDescription),
                     SeName = await _urlRecordService.GetSeNameAsync(product),
@@ -1486,6 +1487,7 @@ namespace Nop.Web.Factories
                 Id = product.Id,
                 Name = await _localizationService.GetLocalizedAsync(product, x => x.Name),
                 ShortDescription = await _localizationService.GetLocalizedAsync(product, x => x.ShortDescription),
+                Author = await _localizationService.GetLocalizedAsync(product, x => x.Author),
                 FullDescription = await _localizationService.GetLocalizedAsync(product, x => x.FullDescription),
                 MetaKeywords = await _localizationService.GetLocalizedAsync(product, x => x.MetaKeywords),
                 MetaDescription = await _localizationService.GetLocalizedAsync(product, x => x.MetaDescription),
