@@ -827,6 +827,7 @@ namespace Nop.Services.Catalog
         /// true - load only "Published" products
         /// false - load only "Unpublished" products
         /// </param>
+        /// <param name="author">Author</param>
         /// <returns>
         /// A task that represents the asynchronous operation
         /// The task result contains the products
@@ -854,7 +855,8 @@ namespace Nop.Services.Catalog
             IList<SpecificationAttributeOption> filteredSpecOptions = null,
             ProductSortingEnum orderBy = ProductSortingEnum.Position,
             bool showHidden = false,
-            bool? overridePublished = null)
+            bool? overridePublished = null,
+            string author = null)
         {
             //some databases don't support int.MaxValue
             if (pageSize == int.MaxValue)
@@ -1020,6 +1022,14 @@ namespace Nop.Services.Catalog
                 productsQuery =
                     from p in productsQuery
                     join pbk in productsByKeywords on p.Id equals pbk
+                    select p;
+            }
+
+            if (!string.IsNullOrEmpty(author))
+            {
+                productsQuery =
+                    from p in productsQuery
+                    where p.Author.Contains(author)
                     select p;
             }
 
